@@ -21,6 +21,7 @@ services:
       - "traefik.frontend.rule=PATH:/prometheus"
       - "traefik.docker.network=web"
       - "traefik.port=9090"
+    container_name: prometheus
 volumes:
   prometheus_data: {}
 networks:
