@@ -1,0 +1,28 @@
+version: '3.1'
+
+services:
+  prometheus:
+    image: prom/prometheus:v2.1.0
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+      - prometheus_data:/prometheus
+    networks:
+      - web
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.backend=prometheus"
+      - "traefik.frontend.rule=Host:datenchaos.ctfl.space"
+      - "traefik.frontend.rule=PATH:/prometheus"
+      - "traefik.docker.network=web"
+      - "traefik.port=9090"
+volumes:
+  prometheus_data: {}
+networks:
+  web:
+    external: true
