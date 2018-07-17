@@ -26,6 +26,26 @@ acmeLogging = true
 [acme.httpChallenge]
 entryPoint = "http"
 
+[file]
+
+# Backends
+[backends]
+  [backends.metrics]
+    [backends.metrics.servers]
+      [backends.metrics.servers.server0]
+        url = "http://127.0.0.1:9023"
+
+[frontends]
+
+  [frontends.metrics]
+    entryPoints = ["http"]
+    backend = "metrics"
+    [frontends.metrics.routes]
+      [frontends.metrics.routes.route0]
+        rule = "Host:datenchaos.ctfl.space"
+      [frontends.metrics.routes.route1]
+        rule = "Path:/export/traefik"
+
 [metrics]
 [metrics.prometheus]
 entryPoint = "traefik"
