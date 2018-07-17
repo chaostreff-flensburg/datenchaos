@@ -9,6 +9,8 @@ defaultEntryPoints = ["https","http"]
   [entryPoints.https]
   address = ":443"
   [entryPoints.https.tls]
+  [entryPoints.traefik]
+  address = ":9023"
 [retry]
 [docker]
 endpoint = "unix:///var/run/docker.sock"
@@ -23,3 +25,7 @@ onHostRule = true
 acmeLogging = true
 [acme.httpChallenge]
 entryPoint = "http"
+
+[metrics]
+[metrics.prometheus]
+entryPoint = "traefik"
