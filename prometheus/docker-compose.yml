@@ -4,7 +4,7 @@ services:
   prometheus:
     image: prom/prometheus:v2.1.0
     volumes:
-      - ./prometheus/:/etc/prometheus/
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus_data:/prometheus
     networks:
       - web
