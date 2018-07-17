@@ -17,6 +17,9 @@ endpoint = "unix:///var/run/docker.sock"
 domain = "datenchaos.ctfl.space"
 watch = true
 exposedByDefault = false
+[api]
+dashboard = true
+
 [acme]
 email = "mail@chaostreff-flensburg.de"
 storage = "acme.json"
