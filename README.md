@@ -5,6 +5,7 @@ This repo contains all the configuration and code for our open data portal and a
 
 - [træfik](./traefik) (reverse proxy)
 - [Prometheus](./prometheus) (data scrapper)
+- [Grafana](./grafana) (monitoring & analytics)
 
 ## Setup
 Clone the repo and create a docker network named `web`. Start each service according to its readme.
