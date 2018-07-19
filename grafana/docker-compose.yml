@@ -7,10 +7,6 @@ services:
       - "./:/var/lib/grafana"
     networks:
       - web
-    enviroment:
-     - "GF_SERVER_ROOT_URL=https://datenchaos.ctfl.space/grafana"
-    #  add grafana plugins to be installed on container startup
-     - "GF_INSTALL_PLUGINS=grafana-clock-panel,grafana-simple-json-datasource"
     restart: always
     labels:
       - "traefik.enable=true"
