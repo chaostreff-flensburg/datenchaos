@@ -11,8 +11,7 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.backend=grafana"
-      - "traefik.frontend.rule=Host:datenchaos.ctfl.space"
-      - "traefik.frontend.rule=PATH:/grafana"
+      - "traefik.frontend.rule=Host:grafana.datenchaos.ctfl.space"
       - "traefik.docker.network=web"
       - "traefik.port=3000"
     container_name: grafana
