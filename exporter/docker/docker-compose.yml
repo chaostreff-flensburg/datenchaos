@@ -9,6 +9,8 @@ services:
     networks:
       - web
     restart: always
+    ports:
+      - 9104:9104
     labels:
       - "traefik.enable=true"
       - "traefik.backend=exporter-docker"
