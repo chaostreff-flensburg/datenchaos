@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  exrporter-docker:
+    image: prom/container-exporter
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /sys/fs/cgroup:/cgroup
+    networks:
+      - web
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.backend=exporter-docker"
+      - "traefik.frontend.rule=Host:docker.datenchaos.ctfl.space"
+      - "traefik.docker.network=web"
+      - "traefik.port=9104"
+    container_name: exporter-docker
+
+networks:
+  web:
+    external: true
