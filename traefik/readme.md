@@ -8,10 +8,10 @@ touch acme.json
 # træfik demands that permissons of acme.json are set to 600 or else it won't start
 chmod 600 acme.json
 ```
-Now start the service with docker-compse:
+Now start the service with docker-compse from the root directory:
 ```bash
 # Start container in the background with -d flag
-docker-compose up -d
+docker-compose up -d trafik
 ```
 
 ---

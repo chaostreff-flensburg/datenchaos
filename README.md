@@ -12,7 +12,8 @@ Clone the repo and create a docker network named `web`.
 ```
 docker network create web
 ```
-Start each service according to its readme.
+
+In the root folder is one docker-compose.yml. This file contain all services ad configs wich are locatet in the service foldes.
 
 ---
 Made with ♡ at [Chaostreff Flensburg](https://twitter.com/chaos_fl)
