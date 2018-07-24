@@ -1,3 +1,9 @@
+# volume data
+/prometheus/prometheus_data/
+/grafana/grafana.db
+/grafana/plugins/
+/grafana/sessions/
+
 # Users Environment Variables
 .lock-wscript
 

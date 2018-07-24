@@ -36,7 +36,7 @@ entryPoint = "http"
   [backends.metrics]
     [backends.metrics.servers]
       [backends.metrics.servers.server0]
-        url = "http://127.0.0.1:9023"
+        url = "http://0.0.0.0:9023"
 
 [frontends]
 

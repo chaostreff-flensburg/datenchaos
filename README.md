@@ -8,7 +8,11 @@ This repo contains all the configuration and code for our open data portal and a
 - [Grafana](./grafana) (monitoring & analytics)
 
 ## Setup
-Clone the repo and create a docker network named `web`. Start each service according to its readme.
+Clone the repo and create a docker network named `web`.
+```
+docker network create web
+```
+Start each service according to its readme.
 
 ---
 Made with ♡ at [Chaostreff Flensburg](https://twitter.com/chaos_fl)
