@@ -17,3 +17,8 @@ scrape_configs:
 
     static_configs:
       - targets: ['localhost:9090']
+
+  - job_name: 'ctfl-space'
+      scrape_interval: 5s
+      target_groups:
+        - targets: ['ctfl.space:9200']
