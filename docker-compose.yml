@@ -21,6 +21,7 @@ services:
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - ./prometheus/prometheus_data:/prometheus
+      - ./prometheus/config:/config
     networks:
       - web
     command:
@@ -36,14 +37,23 @@ services:
       - "traefik.docker.network=web"
       - "traefik.port=9090"
     container_name: prometheus
+    links:
+    - traefik:traefik
+    - grafana:grafana
 
   grafana:
     image: grafana/grafana:5.2.1
+    ports:
+    - 8080:3000
     volumes:
-      - ./grafana:/var/lib/grafana
+      - ./grafana/data:/var/lib/grafana
+      - ./grafana/provisioning/:/etc/grafana/provisioning/
+    env_file:
+      - ./grafana/config.monitoring
     networks:
       - web
     restart: always
+    user: "104"
     labels:
       - "traefik.enable=true"
       - "traefik.backend=grafana"
