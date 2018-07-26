@@ -1,0 +1,16 @@
+version: "2"
+
+services:
+  github-exporter:
+    container_name: exporter-github
+    tty: true
+    stdin_open: true
+    image: infinityworks/github-exporter:latest
+    networks:
+      - web
+    environment:
+      - ORGS=chaostreff-flensburg
+
+networks:
+  web:
+    external: true

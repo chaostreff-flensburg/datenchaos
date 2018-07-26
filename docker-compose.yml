@@ -62,6 +62,18 @@ services:
       - "traefik.port=3000"
     container_name: grafana
 
+    cadvisor-exporter:
+        container_name: "cadvisor-exporter"
+        image: google/cadvisor
+        networks:
+          - web
+        restart: always
+        volumes:
+          - "/:/rootfs:ro"
+          - "/var/run:/var/run:rw"
+          - "/sys:/sys:ro"
+          - "/var/lib/docker/:/var/lib/docker:ro"
+
 volumes:
   prometheus_data: {}
 

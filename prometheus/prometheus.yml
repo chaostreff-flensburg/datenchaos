@@ -11,25 +11,15 @@ global:
 scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
   - job_name: 'prometheus'
-
     # Override the global default and scrape targets from this job every 5 seconds.
     scrape_interval: 5s
-
     static_configs:
-      - targets: ['localhost:9090']
-  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
-  - job_name: 'grafana'
-
-    # Override the global default and scrape targets from this job every 5 seconds.
-    scrape_interval: 5s
-
-    static_configs:
-      - targets: ['grafana:3000']
-  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
-  - job_name: 'traefik'
-
-    # Override the global default and scrape targets from this job every 5 seconds.
-    scrape_interval: 5s
-
-    static_configs:
-      - targets: ['traefik:9023']
+      - targets: [
+          'localhost:9090',
+          'ctfl.space:9200',
+          'datenchaos.ctfl.space:9023',
+          'cadvisor-exporter:8080',
+          'exporter-github:9171',
+          'datenchaos.ctfl.space:9100',
+          'ctfl.space:9100'
+        ]
