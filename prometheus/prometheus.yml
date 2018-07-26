@@ -17,5 +17,6 @@ scrape_configs:
       - targets: [
           'localhost:9090',
           'ctfl.space:9200',
-          'datenchaos.ctfl.space:9023'
+          'datenchaos.ctfl.space:9023',
+          'cadvisor-exporter:8080'
         ]
