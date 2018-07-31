@@ -62,17 +62,32 @@ services:
       - "traefik.port=3000"
     container_name: grafana
 
-    cadvisor-exporter:
-        container_name: "cadvisor-exporter"
-        image: google/cadvisor
-        networks:
-          - web
-        restart: always
-        volumes:
-          - "/:/rootfs:ro"
-          - "/var/run:/var/run:rw"
-          - "/sys:/sys:ro"
-          - "/var/lib/docker/:/var/lib/docker:ro"
+  cadvisor-exporter:
+    container_name: "cadvisor-exporter"
+    image: google/cadvisor
+    networks:
+      - web
+    restart: always
+    volumes:
+      - "/:/rootfs:ro"
+      - "/var/run:/var/run:rw"
+      - "/sys:/sys:ro"
+      - "/var/lib/docker/:/var/lib/docker:ro"
+
+  influxdb:
+    image: influxdb:latest
+    container_name: influxdb
+    ports:
+      - "8083:8083"
+      - "8086:8086"
+      - "8090:8090"
+    restart: always
+    networks:
+      - web
+    env_file:
+      - './influxdb/env.influxdb'
+    volumes:
+      - ./influxdb/data:/var/lib/influxdb
 
 volumes:
   prometheus_data: {}
