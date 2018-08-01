@@ -21,7 +21,7 @@ $ chmod -R 777 prometheus/
 
 
 
-In the root folder is one docker-compose.yml. This file contain all services ad configs wich are locatet in the service foldes.
+In the root folder is one docker-compose.yml. This file contain all services ad configs wich are located in the service foldes.
 
 ---
 Made with ♡ at [Chaostreff Flensburg](https://twitter.com/chaos_fl)
