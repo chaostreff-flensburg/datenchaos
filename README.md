@@ -13,15 +13,13 @@ Clone the repo and create a docker network named `web`.
 docker network create web
 ```
 
-To run prometheus and grafana you have to adjust the folder permissions by applling
+To run prometheus and grafana you have to adjust the directory permissions by applying:
 ```
 $ chmod -R 777 grafana/
 $ chmod -R 777 prometheus/
 ```
 
-
-
-In the root folder is one docker-compose.yml. This file contain all services ad configs wich are located in the service foldes.
+In the root directory is one `docker-compose.yml`. This file contains all services and configurations, wich are located in the service directories.
 
 ---
 Made with ♡ at [Chaostreff Flensburg](https://twitter.com/chaos_fl)
