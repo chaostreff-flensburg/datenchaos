@@ -19,7 +19,7 @@ $ chmod -R 777 grafana/
 $ chmod -R 777 prometheus/
 ```
 
-In the root directory is one `docker-compose.yml`. This file contains all services and configurations, wich are located in the service directories.
+Located in the root directory is one `docker-compose.yml`. This file contains all service configurations. Additional config files and setup instructions can be found in the corresponding service directories.
 
 ---
 Made with ♡ at [Chaostreff Flensburg](https://twitter.com/chaos_fl)
