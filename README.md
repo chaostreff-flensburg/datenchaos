@@ -21,5 +21,11 @@ $ chmod -R 777 prometheus/
 
 Located in the root directory is one `docker-compose.yml`. This file contains all service configurations. Additional config files and setup instructions can be found in the corresponding service directories.
 
+## Run
+
+```
+docker-compose up
+```
+
 ---
 Made with ♡ at [Chaostreff Flensburg](https://twitter.com/chaos_fl)
