@@ -13,6 +13,11 @@ Now start the service with docker-compse from the root directory:
 # Start container in the background with -d flag
 docker-compose up -d trafik
 ```
+Create a password for basic auth
+
+```bash
+[ff@docker01 ~]$ printf "testuser:$(openssl passwd -apr1 pass0815word)\n" |sed 's/\$/\$\$/g'
+```
 
 ---
 Made with ♡ at [Chaostreff Flensburg](https://twitter.com/chaos_fl)
