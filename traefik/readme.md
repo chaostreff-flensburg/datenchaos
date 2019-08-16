@@ -17,6 +17,9 @@ Create a password for basic auth
 
 ```bash
 [ff@docker01 ~]$ printf "testuser:$(openssl passwd -apr1 pass0815word)\n" |sed 's/\$/\$\$/g'
+
+label:
+- "traefik.frontend.auth.basic=testuser:$$apr1$$oQPKJJuG$$GLUGkFH1WkLN.D68SoXJQ."
 ```
 
 ---
